@@ -1,8 +1,9 @@
 {
   "scripts": {
     "build": "next build",
-    "dev": "next dev",
+    "dev": "bin/devserver-and-relay",
     "lint": "next lint",
+    "relay": "relay-compiler --language typescript --src ./src --schema ../schema.graphql",
     "start": "next start"
   },
   "dependencies": {
@@ -10,10 +11,15 @@
     "next": "^12.0.7",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-relay": "^12.0.0",
     "reactstrap": "^9.0.1"
   },
   "devDependencies": {
     "@types/react": "^17.0.37",
+    "babel-plugin-relay": "^12.0.0",
+    "graphql": "^15.8.0",
+    "relay-compiler": "^12.0.0",
+    "relay-compiler-language-typescript": "^15.0.0",
     "typescript": "^4.5.2"
   }
 }
