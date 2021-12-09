@@ -1,6 +1,6 @@
 from ariadne import ObjectType, convert_kwargs_to_snake_case
 
-from store import users, messages
+from store import users, messages, queues
 
 mutation = ObjectType("Mutation")
 
@@ -38,6 +38,8 @@ async def resolve_create_message(obj, info, content, sender_id, recipient_id):
             "recipient_id": recipient_id,
         }
         messages.append(message)
+        for queue in queues:
+            await queue.put(message)
         return {
             "success": True,
             "message": message
