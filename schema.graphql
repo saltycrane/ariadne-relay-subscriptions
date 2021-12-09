@@ -34,7 +34,6 @@ type messagesResult {
 }
 
 type Query {
-    hello: String!
     messages(userId: String!): messagesResult
     userId(username: String!): String
 }
