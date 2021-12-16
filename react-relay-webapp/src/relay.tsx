@@ -16,7 +16,7 @@ function fetchQuery<T extends OperationType>(
   request: RequestParameters,
   variables: Variables
 ): Promise<GraphQLResponse> {
-  const url = "http://127.0.0.1:8000/graphql/";
+  const url = "/graphql";
 
   return fetch(url, {
     method: "POST",

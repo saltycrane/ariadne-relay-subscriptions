@@ -1,2 +1,5 @@
 #+TITLE: Todo
-* TODO hook up mutation to "Enter name" form to create user
+* DONE hook up mutation to "Enter name" form to create user
+* TODO store `userId` from mutation in `localStorage` or something
+* TODO create a message
+* TODO subscribe to messages
