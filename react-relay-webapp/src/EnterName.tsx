@@ -25,7 +25,7 @@ export default function EnterName({ onGetUserId }: TProps) {
 
   return (
     <div>
-      <h1 className="fs-3 mb-3">Enter your name</h1>
+      <h1 className="fs-3 mb-3 text-white">Enter your name</h1>
       <form
         onSubmit={(event) => {
           event.preventDefault();
