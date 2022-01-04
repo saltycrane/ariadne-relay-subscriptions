@@ -2,12 +2,14 @@ import {
   Environment,
   GraphQLResponse,
   Network,
+  Observable,
   OperationType,
   RecordSource,
   RequestParameters,
   Store,
   Variables,
 } from "relay-runtime";
+import { SubscriptionClient } from "subscriptions-transport-ws";
 
 /**
  * fetchQuery
@@ -33,9 +35,28 @@ function fetchQuery<T extends OperationType>(
 }
 
 /**
+ * subscriptionClient
+ */
+const subscriptionClient = new SubscriptionClient("ws://localhost:8000", {
+  reconnect: true,
+});
+
+/**
+ * subscribe
+ */
+const subscribe = (request: RequestParameters, variables: Variables) => {
+  const subscribeObservable = subscriptionClient.request({
+    query: request.text,
+    operationName: request.name,
+    variables,
+  });
+  return Observable.from(subscribeObservable as any);
+};
+
+/**
  * environment
  */
 export const environment = new Environment({
-  network: Network.create(fetchQuery),
+  network: Network.create(fetchQuery, subscribe),
   store: new Store(new RecordSource()),
 });
