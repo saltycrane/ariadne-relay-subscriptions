@@ -8,7 +8,7 @@ type TProps = {
   userId: string;
 };
 
-const ChatBox = ({ userId }: TProps) => {
+export default function ChatBox({ userId }: TProps) {
   const [message, setMessage] = useState("");
 
   const [createMessage] = useMutation<ChatBoxMutation>(
@@ -55,6 +55,4 @@ const ChatBox = ({ userId }: TProps) => {
       </form>
     </div>
   );
-};
-
-export default ChatBox;
+}
