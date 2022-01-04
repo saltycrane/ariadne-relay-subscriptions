@@ -4,6 +4,7 @@ import { RelayEnvironmentProvider } from "react-relay";
 import ChatBox from "./ChatBox";
 import EnterMessage from "./EnterMessage";
 import EnterName from "./EnterName";
+import MessageList from "./MessageList";
 import SelectUser from "./SelectUser";
 import { environment } from "./relay";
 
@@ -22,7 +23,7 @@ export default function Index() {
           </Suspense>
         ) : (
           <ChatBox>
-            <div />
+            <MessageList myUserId={myUserId} otherUserId={otherUserId} />
             <EnterMessage myUserId={myUserId} otherUserId={otherUserId} />
           </ChatBox>
         )}
