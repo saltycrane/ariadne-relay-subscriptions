@@ -11,6 +11,7 @@ type User {
 
 type Message {
     content: String
+    messageId: String
     senderId: String
     recipientId: String
 }

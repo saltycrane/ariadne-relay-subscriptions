@@ -36,6 +36,7 @@ async def resolve_create_message(obj, info, content, sender_id, recipient_id):
     try:
         message = {
             "content": content,
+            "message_id": len(messages) + 1,
             "sender_id": sender_id,
             "recipient_id": recipient_id,
         }
