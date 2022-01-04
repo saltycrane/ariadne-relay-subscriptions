@@ -33,9 +33,16 @@ type messagesResult {
     errors: [String]
 }
 
+type usersResult {
+  users: [User]
+  success: Boolean!
+  errors: [String]
+}
+
 type Query {
     messages(userId: String!): messagesResult
     userId(username: String!): String
+    users: usersResult
 }
 
 type Mutation {

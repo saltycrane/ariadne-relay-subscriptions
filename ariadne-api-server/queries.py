@@ -25,3 +25,13 @@ async def resolve_user_id(obj, info, username):
     user = users.get(username)
     if user:
         return user["user_id"]
+
+@query.field("users")
+@convert_kwargs_to_snake_case
+async def resolve_users(obj, info):
+    users_list = [{"user_id": user["user_id"], "username": user["username"]}
+                  for user in users.values()]
+    return {
+        "success": True,
+        "users": users_list,
+    }
