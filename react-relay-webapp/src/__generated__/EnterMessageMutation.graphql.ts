@@ -4,25 +4,25 @@
 
 import { ConcreteRequest } from "relay-runtime";
 
-export type ChatBoxMutationVariables = {
+export type EnterMessageMutationVariables = {
     content?: string | null | undefined;
     recipientId?: string | null | undefined;
     senderId?: string | null | undefined;
 };
-export type ChatBoxMutationResponse = {
+export type EnterMessageMutationResponse = {
     readonly createMessage: {
         readonly __typename: string;
     } | null;
 };
-export type ChatBoxMutation = {
-    readonly response: ChatBoxMutationResponse;
-    readonly variables: ChatBoxMutationVariables;
+export type EnterMessageMutation = {
+    readonly response: EnterMessageMutationResponse;
+    readonly variables: EnterMessageMutationVariables;
 };
 
 
 
 /*
-mutation ChatBoxMutation(
+mutation EnterMessageMutation(
   $content: String
   $recipientId: String
   $senderId: String
@@ -92,7 +92,7 @@ return {
     "argumentDefinitions": (v0/*: any*/),
     "kind": "Fragment",
     "metadata": null,
-    "name": "ChatBoxMutation",
+    "name": "EnterMessageMutation",
     "selections": (v1/*: any*/),
     "type": "Mutation",
     "abstractKey": null
@@ -101,18 +101,18 @@ return {
   "operation": {
     "argumentDefinitions": (v0/*: any*/),
     "kind": "Operation",
-    "name": "ChatBoxMutation",
+    "name": "EnterMessageMutation",
     "selections": (v1/*: any*/)
   },
   "params": {
-    "cacheID": "f7e58b10e5f21b85ee5e2b8cb994a8f9",
+    "cacheID": "558c102ca84662134ca2788d879d3abf",
     "id": null,
     "metadata": {},
-    "name": "ChatBoxMutation",
+    "name": "EnterMessageMutation",
     "operationKind": "mutation",
-    "text": "mutation ChatBoxMutation(\n  $content: String\n  $recipientId: String\n  $senderId: String\n) {\n  createMessage(content: $content, recipientId: $recipientId, senderId: $senderId) {\n    __typename\n  }\n}\n"
+    "text": "mutation EnterMessageMutation(\n  $content: String\n  $recipientId: String\n  $senderId: String\n) {\n  createMessage(content: $content, recipientId: $recipientId, senderId: $senderId) {\n    __typename\n  }\n}\n"
   }
 };
 })();
-(node as any).hash = 'a6a0c65322ec80c8ca329944d191e23e';
+(node as any).hash = 'ef1b5fde06227df651b63a4dfcc626c4';
 export default node;

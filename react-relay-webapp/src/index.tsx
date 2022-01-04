@@ -2,9 +2,10 @@ import { Suspense, useState } from "react";
 import { RelayEnvironmentProvider } from "react-relay";
 
 import ChatBox from "./ChatBox";
+import EnterMessage from "./EnterMessage";
 import EnterName from "./EnterName";
-import { environment } from "./relay";
 import SelectUser from "./SelectUser";
+import { environment } from "./relay";
 
 export default function Index() {
   const [myUserId, setMyUserId] = useState("");
@@ -20,7 +21,10 @@ export default function Index() {
             <SelectUser onSelectUser={setOtherUserId} />
           </Suspense>
         ) : (
-          <ChatBox userId={myUserId} />
+          <ChatBox>
+            <div />
+            <EnterMessage myUserId={myUserId} otherUserId={otherUserId} />
+          </ChatBox>
         )}
       </div>
     </RelayEnvironmentProvider>
