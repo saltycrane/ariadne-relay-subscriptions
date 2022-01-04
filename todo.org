@@ -1,6 +1,0 @@
-#+TITLE: Todo
-* DONE hook up mutation to "Enter name" form to create user
-* DONE store `userId` from mutation in `localStorage` or something
-* DONE create a message
-* TODO allow user to select another user to chat with
-* TODO subscribe to messages
